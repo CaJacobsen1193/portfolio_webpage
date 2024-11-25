@@ -93,6 +93,7 @@ nav ul li a {
 #projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(200px, auto);
     gap: 20px;
     width: 100%;
     padding: 20px;
@@ -120,15 +121,16 @@ nav ul li a {
 #projects .project-item img{
     width: 100%;
     max-width: 300px;
-    height: auto;
+    height: 200px;
     margin-bottom: 10px;
     border-radius: 8px;
+    display: block;
 }
 
 #projects .project-item a {
     text-decoration: none;
     color: black;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
