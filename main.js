@@ -36,3 +36,19 @@ contactImages.forEach(img => {
         img.style.transform = 'scale(1)';
     });
 })
+
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('header nav');
+
+
+menuToggle.addEventListener('click', (e) => {
+    nav.classList.toggle('active');
+    e.stopPropagation();
+});
+
+
+document.addEventListener('click', (e) => {
+    if (nav.classList.contains('active') && !nav.contains(e.target)) {
+        nav.classList.remove('active'); 
+    }
+});

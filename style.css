@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -34,22 +40,34 @@ header {
     border-bottom: 1px solid black;
 }
 
-nav ul{
+header nav {
+    display: flex;
+}
+
+header nav ul{
     margin: 0;
     padding: 0;
     display: flex;
     gap: 1.5rem;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
 }
 
-nav ul li a {
+header nav ul li a {
     color: black;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /*About*/
@@ -181,6 +199,7 @@ nav ul li a {
     grid-template-rows: auto auto;
     justify-items: center;
     width: 100%;
+    margin: auto;
     background-color: lightskyblue;
 }
 #contact h2 {
@@ -229,6 +248,13 @@ nav ul li a {
 }
 
 @media (max-width: 480px) {
+    header > nav {
+        display: none;
+        
+    }
+}
+
+@media (max-width: 480px) {
     #technologies {
         grid-template-columns: 1fr;
     }
@@ -240,5 +266,31 @@ nav ul li a {
     }
     #contact .icons i {
         font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%; 
+        background-color: whitesmoke;
+        padding: 10px 20px;
+        border-top: 1px solid black;
+    }
+    header nav.active {
+        display: flex;
+    }
+    #menu-toggle {
+        display: block;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
     }
 }
